@@ -1,0 +1,63 @@
+int *arr = malloc(k * sizeof(int));
+char *str = malloc((p + 1) * sizeof(char));
+int *mat = calloc(n, m * sizeof(int));
+int *arr = realloc(arr, 5 * sizeof(int));
+
+False
+True
+
+sizeof(summands) / sizeof(int)
+n -> strlen(string)
+i < 16 -> i <= 16
+
+int mystrlen(char *str)
+{
+    int length = 0;
+    while (*str++)
+        length++;
+    return length;
+}
+
+0x36432107 
+00
+00
+00
+14
+00
+00
+00
+0A
+
+36
+43
+21
+00
+
+14
+00
+00
+00
+0A
+00
+00
+00
+
+00
+21
+43
+36
+
+0x000000140000000A
+0x20000000
+0x36432100
+20
+
+false
+
+void rotate(void *front, void *separator, void *end)
+{
+    char tmp[separator - front];
+    memcpy(tmp, front, (separator - front) * sizeof(char));
+    memmove(front, separator, (end - separator) * sizeof(char));
+    memcpy(front + (end - separator), tmp, (separator - front) * sizeof(char));
+}
