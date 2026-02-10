@@ -52,8 +52,25 @@ long long int sum_simd(int vals[NUM_ELEMS]) {
     /* DO NOT MODIFY ANYTHING ABOVE THIS LINE (in this function) */
 
     for(unsigned int w = 0; w < OUTER_ITERATIONS; w++) {
+        __m128i sum = _mm_set1_epi32(0);
+        int tmp[4];
         /* YOUR CODE GOES HERE */
+        for(unsigned int i = 0; i < NUM_ELEMS / 4 * 4; i += 4) {
+            __m128i vec = _mm_loadu_si128((__m128i*)(vals + i));
+            __m128i mask = _mm_cmpgt_epi32(vec, _127);
+            sum = _mm_add_epi32(sum, _mm_and_si128(mask, vec));
+        }
 
+        // TAIL CASE, for when NUM_ELEMS isn't a multiple of 4
+        // NUM_ELEMS / 4 * 4 is the largest multiple of 4 less than NUM_ELEMS
+        // Order is important, since (NUM_ELEMS / 4) effectively rounds down first
+        _mm_storeu_si128((__m128i*)tmp, sum);
+        for(unsigned int i = NUM_ELEMS / 4 * 4; i < NUM_ELEMS; i++) {
+            if (vals[i] >= 128) {
+                tmp[0] += vals[i];
+            }
+        }
+        result += tmp[0] + tmp[1] + tmp[2] + tmp[3];
         /* Hint: you'll need a tail case. */
     }
 
@@ -73,6 +90,33 @@ long long int sum_simd_unrolled(int vals[NUM_ELEMS]) {
         /* YOUR CODE GOES HERE */
         /* Copy your sum_simd() implementation here, and unroll it */
 
+        __m128i sum = _mm_set1_epi32(0);
+        int tmp[4];
+        for(unsigned int i = 0; i < NUM_ELEMS / 16 * 16; i += 16) {
+            __m128i vec = _mm_loadu_si128((__m128i*)(vals + i));
+            __m128i mask = _mm_cmpgt_epi32(vec, _127);
+            sum = _mm_add_epi32(sum, _mm_and_si128(mask, vec));
+
+            vec = _mm_loadu_si128((__m128i*)(vals + i + 4));
+            mask = _mm_cmpgt_epi32(vec, _127);
+            sum = _mm_add_epi32(sum, _mm_and_si128(mask, vec));
+
+            vec = _mm_loadu_si128((__m128i*)(vals + i + 8));
+            mask = _mm_cmpgt_epi32(vec, _127);
+            sum = _mm_add_epi32(sum, _mm_and_si128(mask, vec));
+
+            vec = _mm_loadu_si128((__m128i*)(vals + i + 12));
+            mask = _mm_cmpgt_epi32(vec, _127);
+            sum = _mm_add_epi32(sum, _mm_and_si128(mask, vec));
+        }
+
+        _mm_storeu_si128((__m128i*)tmp, sum);
+        for(unsigned int i = NUM_ELEMS / 16 * 16; i < NUM_ELEMS; i++) {
+            if (vals[i] >= 128) {
+                tmp[0] += vals[i];
+            }
+        }
+        result += tmp[0] + tmp[1] + tmp[2] + tmp[3];
         /* Hint: you'll need 1 or maybe 2 tail cases here. */
     }
 
