@@ -1,0 +1,121 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/interactive_snake.o",
+      "src/interactive_snake.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/interactive_snake.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/interactive_snake.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/snake_utils.o",
+      "src/snake_utils.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/snake_utils.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/snake_utils.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/game.o",
+      "src/game.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/game.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/game.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/snake.o",
+      "src/snake.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/snake.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/snake.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/unit_tests.o",
+      "src/unit_tests.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/unit_tests.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/unit_tests.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/asserts.o",
+      "src/asserts.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/asserts.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/asserts.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-Wall",
+      "-Wno-unused-function",
+      "-Wconversion",
+      "-std=c99",
+      "-g",
+      "-o",
+      "src/custom_tests.o",
+      "src/custom_tests.c"
+    ],
+    "directory": "/home/zhangyong/cs61c/projects/project1",
+    "file": "/home/zhangyong/cs61c/projects/project1/src/custom_tests.c",
+    "output": "/home/zhangyong/cs61c/projects/project1/src/custom_tests.o"
+  }
+]

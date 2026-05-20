@@ -25,6 +25,7 @@ static void update_head(game_t *game, unsigned int snum);
 game_t *create_default_game() {
   // TODO: Implement this function.
     game_t *gameptr = calloc(1, sizeof(game_t));
+
     if (!gameptr)
         return NULL;
 
